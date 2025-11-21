@@ -32,7 +32,7 @@ class SensorBiomedico:
         }
 
 
-# Subclases especializadas
+
 class SensorCardiaco(SensorBiomedico):
     def __init__(self, id_sensor, tipo, unidad_medida, frecuencia_muestreo):
         super().__init__(id_sensor, tipo, unidad_medida)
