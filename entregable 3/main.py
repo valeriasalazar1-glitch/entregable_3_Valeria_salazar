@@ -1,20 +1,19 @@
 from procesador import ProcesadorDICOM
 
 def main():
-    ruta = 'dicoms'   
+    procesador = ProcesadorDICOM(ruta_directorio='dicoms', descargar_pruebas=True)
 
-    procesador = ProcesadorDICOM(ruta)
-    
     procesador.cargar_archivos()
-    df = procesador.extraer_metadatos()
-    df = procesador.calcular_intensidad_promedio()
+    procesador.extraer_metadatos()
+    procesador.calcular_intensidad_promedio()
 
-    print('dataframe final')
-    print(df)
+    print('Resultados')
+    print(procesador.dataframe.head())
 
-    df.to_csv('esultados_dicom.csv', index=False)
-    print("\nArchivo 'resultados_dicom.csv' generado.")
+    procesador.guardar_csv('resultados_dicom.csv')
+
+    print('Fin del proceso')
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
