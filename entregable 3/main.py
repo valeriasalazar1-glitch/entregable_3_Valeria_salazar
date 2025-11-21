@@ -1,7 +1,7 @@
 from procesador import ProcesadorDICOM
 
 def main():
-    ruta = 'dicoms'   # Cambia según tu carpeta de trabajo
+    ruta = 'dicoms'   
 
     procesador = ProcesadorDICOM(ruta)
     
